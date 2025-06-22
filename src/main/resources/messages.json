@@ -1,0 +1,4 @@
+[
+  { "bookId": 1, "title": "Clean Code", "author": "Robert Martin" },
+  { "bookId": 2, "title": "Effective Java", "author": "Joshua Bloch" }
+]
