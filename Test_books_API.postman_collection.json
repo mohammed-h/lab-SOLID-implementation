@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "eb05886d-5ec4-41d9-ad2f-8409469b7841",
+		"name": "Test books API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45936176"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New book\",\r\n    \"authorId\": 2,\r\n    \"publicationDate\": \"20/05/2011\",\r\n    \"type\": \"Fantasy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"updated book\",\r\n    \"authorId\": 2,\r\n    \"publicationDate\": \"20/05/1999\",\r\n    \"type\": \"Fantasy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY TITLE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/search?title=Harry Potter and the Philosopher's Stone",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Harry Potter and the Philosopher's Stone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RATING",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/5/rating",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"5",
+						"rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET AUTHORS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/authors?bookIds=1,2,4,5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"authors"
+					],
+					"query": [
+						{
+							"key": "bookIds",
+							"value": "1,2,4,5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY ISBN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/isbn/0201558025",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"isbn",
+						"0201558025"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "aedz-151-ftyh-554",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9090/api/books",
+			"type": "string"
+		}
+	]
+}
